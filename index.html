@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Exercícios com Condições</title>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Exercícios com Condições</h1>
+    <button onclick="parOuImpar()">Par ou Ímpar</button>
+    <button onclick="verificarIdade()">Maior de Idade</button>
+    <button onclick="notaAluno()">Nota do Aluno</button>
+    <button onclick="diaSemana()">Dia da Semana</button>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function parOuImpar() {
+      const numero = parseInt(prompt("Digite um número:"));
+      if (isNaN(numero)) return alert("Digite um número válido.");
+      if (numero % 2 === 0) {
+        alert("É par");
+      } else {
+        alert("É ímpar");
+      }
+    }
+
+    function verificarIdade() {
+      const idade = parseInt(prompt("Digite sua idade:"));
+      if (isNaN(idade)) return alert("Idade inválida");
+      if (idade >= 18) {
+        alert("Maior de idade");
+      } else {
+        alert("Menor de idade");
+      }
+    }
+
+    function notaAluno() {
+      const nota = parseFloat(prompt("Digite a nota do aluno (0 a 100):"));
+      if (nota > 100 || nota < 0 || isNaN(nota)) return alert("Nota inválida");
+      
+      if (nota >= 90) {
+        alert("Nota A");
+      } else if (nota >= 80) {
+        alert("Nota B");
+      } else if (nota >= 70) {
+        alert("Nota C");
+      } else if (nota >= 60) {
+        alert("Nota D");
+      } else {
+        alert("Nota F");
+      }
+    }
+
+    function diaSemana() {
+      const dia = parseInt(prompt("Digite um número de 1 a 7:"));
+      let nomeDia;
+      switch (dia) {
+        case 1:
+          nomeDia = "Domingo";
+          break;
+        case 2:
+          nomeDia = "Segunda";
+          break;
+        case 3:
+          nomeDia = "Terça";
+          break;
+        case 4:
+          nomeDia = "Quarta";
+          break;
+        case 5:
+          nomeDia = "Quinta";
+          break;
+        case 6:
+          nomeDia = "Sexta";
+          break;
+        case 7:
+          nomeDia = "Sábado";
+          break;
+        default:
+          nomeDia = "Dia inválido";
+      }
+      alert(nomeDia);
+    }
+
+    function login() {
+      const usuario = prompt("Digite o usuário:");
+      const senha = prompt("Digite a senha:");
+
+      if (usuario === "admin" && senha === "1234") {
+        alert("Login bem-sucedido!");
+      } else {
+        alert("Usuário ou senha incorretos.");
+      }
+    }
+  </script>
+</body>
+</html>
